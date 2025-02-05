@@ -1,2 +1,3 @@
 # repo
-Repository for MC projects 
+Repository for CMSC projects
+
