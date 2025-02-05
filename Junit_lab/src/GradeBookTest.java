@@ -3,11 +3,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runners.Parameterized.AfterParam;
 
 class GradeBookTest {
 	
 	private GradeBook t1 = new GradeBook(5);
 	private GradeBook t2 = new GradeBook(5);
+	
 	@BeforeEach
 	void setUp() throws Exception {
 		t1 = new GradeBook(5);
@@ -57,9 +59,9 @@ class GradeBookTest {
 		assertEquals(9.132,t1.finalScore(),.001);
 	}
 
-//	@Test
-//	void testToString() {
-//		fail("Not yet implemented");
-//	}
+	@Test
+	void testToString() {
+		
+	}
 
 }

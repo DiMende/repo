@@ -88,7 +88,6 @@ public class GradeBook
 	   for(int i = 0; i < getScoreSize();i++) {
 		   allScores += scores[i] + " ";
 	   }
-	   System.out.println(allScores);
 	   return allScores;
    }
 }
