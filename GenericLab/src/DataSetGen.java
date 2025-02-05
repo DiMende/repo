@@ -1,7 +1,7 @@
 /**
    Computes the average of a set of data values.
 */
-public class DataSetGen<T> 
+public class DataSetGen<T>
 {
    private double sum;
    private T maximum;
@@ -23,8 +23,8 @@ public class DataSetGen<T>
    */
    public void add(T x)
    {
-      sum = sum + ((Measurable) x).getMeasure();
-      if (count == 0 || ((Measurable)maximum).getMeasure() < ((Measurable)x).getMeasure())
+      sum = sum + ((Measurable)x).getMeasure();
+      if (count == 0 ||((Measurable)maximum).getMeasure() < ((Measurable)x).getMeasure())
          maximum = x;
       count++;
    }
