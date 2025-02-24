@@ -14,8 +14,10 @@ public class MyStackTest {
 	public String a="a", b="b", c="c", d="d", e="e", f="f";
 	public ArrayList<String> fill = new ArrayList<String>();
 	
+	
 	// STUDENT: student tests will use the doubleS
 	public MyStack<Double> doubleS;
+	public Double val1 = 4.2,val2 = 1.0,val3 = 4.3;
 	// STUDENT: add variables as needed for your student tests
 	
 	@BeforeEach
@@ -26,6 +28,12 @@ public class MyStackTest {
 		stringS.push(c);
 		
 		//STUDENT: add setup for doubleS for student tests
+		doubleS = new MyStack<Double>(4);
+		doubleS.push(val1);
+		doubleS.push(val2);
+		doubleS.push(val3);
+
+
 	}
 
 	@AfterEach
@@ -71,8 +79,18 @@ public class MyStackTest {
 
 	@Test
 	public void testPopStudent() {
-		//Use the doubleQ for student tests
-		fail("Not yet implemented");
+		try {
+			assertEquals(val3, doubleS.pop());
+			assertEquals(val2, doubleS.pop());
+			assertEquals(val1, doubleS.pop());
+			doubleS.pop();
+			assertTrue("should have caused an StackUnderflowException", false);
+
+		} catch (StackUnderflowException e) {
+			assertTrue("should have caused an StackUnderflowException", true);
+		} catch (Exception e) {
+			assertTrue("should have caused an StackUnderflowException", false);
+		}
 	}
 	
 	@Test
@@ -117,8 +135,18 @@ public class MyStackTest {
 
 	@Test
 	public void testPushStudent() {
-		//Use the doubleQ for student tests
-		fail("Not yet implemented");
+		try {
+			assertEquals(3, doubleS.size());
+			assertEquals(true, doubleS.push(3.2));
+			assertEquals(4, doubleS.size());
+			doubleS.push(3.3);
+			assertTrue("should have caused an StackOverflowException", false);
+
+		} catch (StackOverflowException e) {
+			assertTrue("should have caused an StackOverflowException", true);
+		} catch (Exception e) {
+			assertTrue("should have caused an StackOverflowException", false);
+		}
 	}
 	
 	@Test
@@ -132,8 +160,10 @@ public class MyStackTest {
 
 	@Test
 	public void testToStringStudent() {
-		//Use the doubleQ for student tests
-		fail("Not yet implemented");
+		assertEquals(val1.toString()+val2.toString()+val3.toString(),doubleS.toString());
+		doubleS.push(3.2);
+		assertEquals(val1.toString()+val2.toString()+val3.toString()+"3.2",doubleS.toString());
+
 	}
 	
 	@Test

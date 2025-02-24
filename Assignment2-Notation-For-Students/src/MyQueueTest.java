@@ -16,6 +16,7 @@ public class MyQueueTest {
 	
 	// STUDENT: student tests will use the doubleQ
 	public MyQueue<Double> doubleQ;
+	public Double val1 = 3.2, val2 = 4.5, val3 = 2.9,val4 = 5.4;
 	// STUDENT: add variables as needed for your student tests
 
 	@BeforeEach
@@ -26,6 +27,14 @@ public class MyQueueTest {
 		stringQ.enqueue(c);
 		
 		//STUDENT: add setup for doubleQ for student tests
+		doubleQ = new MyQueue<Double>(6);
+		doubleQ.enqueue(val1);
+		doubleQ.enqueue(val2);
+		doubleQ.enqueue(val3);
+		doubleQ.enqueue(val4);
+
+
+
 	}
 
 	@AfterEach
@@ -63,8 +72,16 @@ public class MyQueueTest {
 	
 	@Test
 	public void testDequeueStudent() {
-		//Use the doubleQ for student tests
-		fail("Not yet implemented");
+		try {
+			assertEquals(val1, doubleQ.dequeue());
+			assertEquals(val2, doubleQ.dequeue());
+			assertEquals(val3, doubleQ.dequeue());
+			doubleQ.dequeue();
+		} catch (QueueUnderflowException e) {
+			assertTrue("caused an QueueUnderflowException", true);
+		} catch (Exception e) {
+			assertTrue("should of caused QueueUnderflowException",false);
+		}
 	}
 
 	@Test
@@ -99,8 +116,19 @@ public class MyQueueTest {
 
 	@Test
 	public void testEnqueueStudent() {
-		//Use the doubleQ for student tests
-		fail("Not yet implemented");
+		try {
+			assertEquals(4,doubleQ.size());
+			assertEquals(true, doubleQ.enqueue(8.8));
+			assertEquals(5,doubleQ.size());
+			assertEquals(true, doubleQ.enqueue(10.7));
+			assertEquals(6,doubleQ.size());
+			doubleQ.enqueue(7.8);
+			assertTrue("should have caused QueueOverflowException error", false);
+		}catch (QueueOverflowException e){
+			assertTrue("Caused an QueueOverflowException",true);
+		} catch (Exception e){
+			assertTrue("should have caused an QueueOverflowException", false);
+		}
 	}
 
 	@Test
@@ -122,8 +150,14 @@ public class MyQueueTest {
 	
 	@Test
 	public void testToStringStudent() {
-		//Use the doubleQ for student tests
-		fail("Not yet implemented");
+		assertEquals("3.24.52.95.4",doubleQ.toString());
+		doubleQ.enqueue(2.3);
+		assertEquals("3.24.52.95.42.3",doubleQ.toString());
+		doubleQ.enqueue(21.3);
+		assertEquals("3.24.52.95.42.321.3",doubleQ.toString());
+
+
+
 	}
 
 	@Test
