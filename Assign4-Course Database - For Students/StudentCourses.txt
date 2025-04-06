@@ -1,0 +1,6 @@
+CMSC204 20106 4 SW204 David Kuijt
+MATH284 20143 4 HS314 Stephen Wheatly
+POLI101 35608 3 Distance-Learning Barack Obama
+POLI211 35607 3 Distance Learning Donald J. Trump
+LGST106 35655 3 HS108 Saul Goodmen
+ENGL101 20451 3 PK102 Jorinde van den Berg
