@@ -12,7 +12,6 @@ import java.util.ArrayList;
  *  
  * 
  * */
-
 public interface LinkedConverterTreeInterface<T> {
 	
 	
@@ -37,7 +36,6 @@ public interface LinkedConverterTreeInterface<T> {
 	 * @param code the code for the new node to be added
 	 * 
 	 */
-	 
 	 public void insert(T code, T result);	
 	 
 	/**

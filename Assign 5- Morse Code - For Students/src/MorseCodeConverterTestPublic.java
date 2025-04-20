@@ -53,6 +53,7 @@ public class MorseCodeConverterTestPublic {
 		} catch (FileNotFoundException e) {
 			assertTrue("An unwanted exception was caught", false);
 		}
+		
 	}
 	
 
