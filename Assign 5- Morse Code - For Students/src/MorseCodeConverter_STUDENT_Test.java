@@ -50,12 +50,21 @@ class MorseCodeConverter_STUDENT_Test {
 			assertTrue("An unwanted exception was caught", false);
 		}
 		//Student test with new file
-		File fourthFile = new File("src/DtMF.txt");
+		File fourthFile = new File("src/LoveLooksNot.txt");
 		try {
-			assertEquals("debi tirar mas fotos de cuando te tuve", MorseCodeConverter.convertToEnglish(fourthFile));
+			assertEquals("LOVE LOOKS NOT WITH THE EYES BUT WITH THE MIND".toLowerCase(), MorseCodeConverter.convertToEnglish(fourthFile));
 		} catch (FileNotFoundException e) {
 			assertTrue("An unwanted exception was caught", false);
 		}
+		//non-student file
+		
+		File fifthFile = new File("src/DtMF.txt");
+		try {
+			assertEquals("debi tirar mas fotos de cuando te tuve", MorseCodeConverter.convertToEnglish(fifthFile));
+		} catch (FileNotFoundException e) {
+			assertTrue("An unwanted exception was caught", false);
+		}
+		
 	}
 
 }
